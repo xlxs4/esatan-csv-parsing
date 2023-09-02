@@ -1,12 +1,22 @@
+from typing import Tuple
+
 import matplotlib.pyplot as plt
 import seaborn as sns
+
+from eltypes import data
 
 
 def setup_plots():
     sns.set_style("whitegrid")
 
 
-def lineplot(df, data_sources, element_ids, measurement_kinds, dims=(15, 8)):
+def lineplot(
+    df: data,
+    data_sources: list[str],
+    element_ids: list[int],
+    measurement_kinds: list[str],
+    dims: Tuple[int, int] = (15, 8),
+):
     same = lambda xs: all(x == xs[0] for x in xs)
     same_sources = same(data_sources)
     title = f"{data_sources[0]}" if same_sources else f"{', '.join(data_sources)}"

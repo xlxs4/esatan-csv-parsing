@@ -1,7 +1,11 @@
+from pathlib import Path
+
 import pandas as pd
 
+from eltypes import data, meta
 
-def read_csv_meta(filename):
+
+def read_csv_meta(filename: Path) -> meta:
     parse = lambda x: x.rstrip().split(",")[1::2]
     meta_map = {"Data Source": None, "Element": None, "Time": None}
     with open(filename, "r") as f:
@@ -21,5 +25,5 @@ def read_csv_meta(filename):
     return meta_row_idx, meta_map
 
 
-def read_csv(filename, meta_row_idx):
+def read_csv(filename: Path, meta_row_idx: int) -> data:
     return pd.read_csv(filename, skiprows=meta_row_idx)
