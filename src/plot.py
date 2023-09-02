@@ -12,7 +12,7 @@ with open("attribute.csv", "r") as f:
         for key in meta_map.keys():
             if line.startswith(key):
                 meta_map[key] = parse(line)
-        if all(map.values()):
+        if all(meta_map.values()):
             val_row = idx
             break
 
