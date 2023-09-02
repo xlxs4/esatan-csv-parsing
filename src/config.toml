@@ -1,1 +1,2 @@
-filename = "../attribute.csv"
+# Example
+filename = "attribute.csv"
