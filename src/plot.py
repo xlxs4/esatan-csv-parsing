@@ -15,6 +15,7 @@ def lineplot(df, data_sources, element_ids, measurement_kinds, dims=(15, 8)):
         plt.figure(figsize=dims)
         plt.title(title)
 
+    dedup_label = lambda s: s.split(".")[0]
     for idx, (t_col, val_col) in enumerate(zip(df.columns[::2], df.columns[1::2])):
         if not same_kinds:
             plt.figure(figsize=dims)
@@ -27,6 +28,8 @@ def lineplot(df, data_sources, element_ids, measurement_kinds, dims=(15, 8)):
         )
         if not same_kinds:
             plt.title(title)
+            plt.xlabel(dedup_label(plt.gca().get_xlabel()))
+            plt.ylabel(dedup_label(plt.gca().get_ylabel()))
             plt.show()
 
     if same_kinds:
