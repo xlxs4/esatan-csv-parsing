@@ -1,20 +1,12 @@
 image: python:3.11
-stages:
-  - setup
-  - run
 
-install_poetry:
-  stage: setup
+stages:
+  - build_and_run
+
+build_and_run:
+  stage: build_and_run
   script:
     - pip install poetry
     - poetry --version
-
-install_dependencies:
-  stage: setup
-  script:
     - poetry install
-
-run_main:
-  stage: run
-  script:
     - poetry run python src/main.py
