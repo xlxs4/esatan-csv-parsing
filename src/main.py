@@ -9,4 +9,6 @@ if __name__ == "__main__":
     meta_row_idx, meta_map = read_csv_meta(CONFIG.filename)
     df = read_csv(CONFIG.filename, meta_row_idx)
     setup_plots()
-    lineplot(df, meta_map["Measurement Kind"], meta_map["Element"])
+    lineplot(
+        df, meta_map["Data Source"], meta_map["Element"], meta_map["Measurement Kind"]
+    )

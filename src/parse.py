@@ -15,6 +15,9 @@ def read_csv_meta(filename):
                 break
 
     meta_map["Measurement Kind"] = meta_map.pop("Time")
+    meta_map["Data Source"] = [
+        ds.split(" : TMD : ")[0] for ds in meta_map["Data Source"]
+    ]
     return meta_row_idx, meta_map
 
 
