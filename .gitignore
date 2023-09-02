@@ -161,6 +161,3 @@ cython_debug/
 
 # VSCode
 .vscode/
-
-# Useful in case you want to dev with a local CSV
-*.csv
