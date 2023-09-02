@@ -10,4 +10,5 @@ To generate a plot (or plots) for your CSV, [clone](https://docs.gitlab.com/ee/g
 - Navigate to the `utilites` folder
 - If it's the first time you're doing this, run `poetry install` in your terminal
 - Run `poetry shell` in your terminal
+- Edit `src/config.toml` and add the filename of your CSV there
 - Execute the script by running `python3 src/main.py` in your terminal
