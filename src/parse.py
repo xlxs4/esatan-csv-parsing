@@ -9,9 +9,11 @@ def parse_csv_meta(filename):
             for key in meta_map.keys():
                 if line.startswith(key):
                     meta_map[key] = parse(line)
+
             if all(meta_map.values()):
                 meta_row_idx = idx
                 break
+
     meta_map["Measurement Kind"] = meta_map.pop("Time")
     return meta_row_idx, meta_map
 
