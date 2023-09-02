@@ -1,7 +1,7 @@
 import pandas as pd
 
 
-def parse_csv_meta(filename):
+def read_csv_meta(filename):
     parse = lambda x: x.rstrip().split(",")[1::2]
     meta_map = {"Data Source": None, "Element": None, "Time": None}
     with open(filename, "r") as f:
